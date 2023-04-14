@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="working-man.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Sans&family=Heebo:wght@300&family=Nunito:wght@600&family=Rubik:ital,wght@0,500;1,300&family=Signika:wght@300&family=Yantramanav&display=swap"
+        rel="stylesheet">
+
+    <title>Oasis Infobyte</title>
+</head>
+<style>
+    * {
+        font-family: 'Nunito', sans-serif;
+        padding: 0;
+        margin: 0;
+       
+    }
+
+    .main {
+        display: flex;
+        display: grid;
+        grid-template-areas:
+            "head head head"
+            "content content content"
+            "foot foot foot";
+    }
+
+
+
+    footer {
+        display: flex;
+        width: 100%;
+        grid-area: foot;
+        position: sticky;
+        width: 100%;
+        background-color: teal;
+        color: white;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .rightside {
+        position: fixed;
+        right: 1vw;
+
+    }
+
+    .left {
+        width: 48%;
+        display: inline;
+    }
+
+    article img {
+        width: 48%;
+    }
+
+    .g-col-6 g-col-md-4 {
+        display: inline;
+    }
+
+    h3 img {
+        border: 2px solid white;
+        border-radius: 20px;
+    }
+
+    .logo img {
+        border: 2px solid rgb(255, 254, 251);
+        width: 30px;
+        border-radius: 20px;
+    }
+
+    header {
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        top: 0;
+        position: fixed;
+        justify-content: space-between;
+        padding: 15px;
+        background-color: teal;
+        width: 100vw;
+        color: white;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    }
+    header li{
+        display: flex;
+        align-items: center;
+
+    }
+
+    li:hover {
+        color: aqua;
+        position: relative;
+        left: 1.8px;
+    }
+
+
+    header a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .list {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+
+    }
+
+    #toggler,
+    header label {
+        display: none;
+    }
+
+    @media screen and (max-width:600px)
+    {
+        .menu {
+            width: 100%;
+            overflow:hidden;           
+        }
+
+        .list {
+            flex-direction:row;
+            align-items: center;
+            padding: 20px;
+            font-size: smaller;
+
+        }
+
+        header label {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lleft,
+    .mid,
+    .rright {
+        padding: 10px;
+    }
+
+        #toggler:checked~.menu {
+            max-height: 100%;            
+        }
+        
+    
+    }
+    .lleft {
+        width: 40%;
+    }
+
+    .mid {
+        width: 35%;
+    }
+
+    .rright {
+        width: 35%;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: inherit;
+
+    }
+
+    footer li {
+        list-style: none;
+    }
+
+    /* .lleft,
+    .mid,
+    .rright {
+        padding: 20px;
+    } */
+
+    
+
+    header img {
+        margin-left: 2vw;
+    }
+
+    article {
+        width: 100%;
+        display: flex;
+        grid-area: content;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10vh;
+    }
+
+    li img:hover {
+        font-size: larger;
+    }
+
+    .IMG {
+        width: 45%;
+
+        margin: 25px;
+        height: 50vh;
+        object-fit: contain;
+
+        /* width: 100%; */
+
+    }
+
+    .IMG img {
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    .passage {
+        width: 45%;
+        margin: 25px;
+    }
+
+    .box {
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+        padding: 10px;
+        border-radius: 15px;
+        margin: 20px;
+    }
+
+    .box-container {
+
+        
+        margin-top: 15vh;
+    
+        
+    }
+
+    .box:hover {
+        resize: both;
+        background-color: teal;
+        color: white;
+        cursor: pointer;
+
+    }
+
+    .text {
+        font-size: smaller;
+    }
+
+    article a {
+        text-decoration: none;
+        color: teal;
+        border: 1.5px solid teal;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    article a:hover {
+        background-color: teal;
+        color: white;
+    }
+
+    .box img {
+        width: 50px;
+        margin-left: 40%;
+        margin-right: 40%;
+        border-radius: 15px;
+
+    }
+    .logos{
+        display: flex;
+    }
+    .logos img{
+        width: 30px;
+        margin: 5px;
+    }
+    aside{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+
+</style>
+
+<body>
+    <Div class="main">
+        <header>
+            <a class="logo" href="#"><img src="employee.png" alt=""></a>
+            
+            <div class="menu">
+                <ul class="list">
+                    <li><a href="#">OASIS INFOBYTE</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Internships</a></li>
+                    <li><a href="#">Coantact</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <article>
+            <div id="in" class="passage">
+                <h2>Enter the world of coding by enrolling in our internship program today!!</h2><br>
+                <h3>"In every student, there is a power to change the world"</h3><br> <a href="#">Get Started</a>
+            </div>
+            <div id="in" class="IMG"><img src="18771.jpg" alt=""></div>
+            
+        </article>
+        <aside> <div class="content">
+            <div class="box-container">
+                <div class="box">
+                    <img src="subject-icon-8.png" alt="">
+                    <h3>Web Development</h3>
+                    <p>Website needs to work across all devices and it needs to be fast as possible.</p>
+                </div>
+                <div class="box">
+                    <img src="student-icon-2.png" alt="">
+                    <h3>Java Development</h3>
+                    <p>It includes owning a particular application or working on several at one time.</p>
+                </div>
+                <div class="box">
+                    <img src="student-icon-3.png" alt="">
+                    <h3> Android App Develepment</h3>
+                    <p>It is created for making devices running the operating systems of Android.</p>
+                </div>
+                <div class="box">
+                    <img src="student-icon-4.png" alt="">
+                    <h3>Digital Marketing</h3>
+                    <p>It is the marketing and advertising of a business, product, or service using social media.</p>
+                </div>
+                <div class="box">
+                    <img src="subject-icon-5.png" alt="">
+                    <h3>C/C++ Develepment</h3>
+                    <p>It is a general-purpose programming and coding language.</p>
+                </div>
+                <div class="box">
+                    <img src="subject-icon-6.png" alt="">
+                    <h3>Cloud Computing</h3>
+                    <p>It is the delivery of distinct services over the Internet.</p>
+                </div>
+            </div>
+        </div></aside>
+       
+
+       
+
+
+        <footer>
+            <div class="lleft">
+                <h3>Oasis Infobyte</h3>
+                <p class="text">
+
+                   Oasis Infobyte is An Online Coding Platform that Offers Specially Programming Courses For Students.
+                    You've
+                    Probably Heard About How Programming Shines With New Technology. We Have To Be Aware Of How
+                    Programming
+                    Can Initiate New Innovations. What's A Better Approach For Our Students Is To Grasp And Adapt To The
+                    Technology Around Them. </p>
+            </div>
+
+
+            <div class="mid">
+                <h3>Quick Links</h3>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Internships</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </div>
+            <div class="rright">
+                <h3>Useful Links</h3>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Send Feedback</a></li>
+
+                <div class="logos">
+                    <li><a href="https://t.me/Ic100_protechinterns"><img src="telegram.png" alt=""></a></li>
+                    <li><a href="https://www.instagram.com/interncrowd/"><img src="instagram.png" alt=""></a></li>
+                    <li><a href="https://www.linkedin.com/404/"><img src="linkedin.png" alt=""></a></li>
+                </div>
+
+
+            </div>
+
+        </footer>
+    </Div>
+</body>
+
+</html>
